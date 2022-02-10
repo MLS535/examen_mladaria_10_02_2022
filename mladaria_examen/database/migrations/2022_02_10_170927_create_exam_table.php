@@ -19,7 +19,6 @@ class CreateExamTable extends Migration
             $table->string('category');
             $table->date('date');
             $table->string('size');
-            $table->string('gender');
             $table->longText('description');
             $table->unsignedInteger('user_id')->nullable()->after('id');
             $table->timestamps();

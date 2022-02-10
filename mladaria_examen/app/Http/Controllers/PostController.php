@@ -36,10 +36,10 @@ class PostController extends Controller
 //       } ;
 //         abort(403);
         //$this->authorize('create-post');
+        $posts = Post::where('user_id', Auth::id())->get();
+       $this->authorize('create', new Post);
 
-        $this->authorize('create', new Post);
-
-        return view('posts.create');
+         return view('posts.create', compact('posts'),['newPost'=> new Post]);
 
     }
 
@@ -55,7 +55,6 @@ class PostController extends Controller
 
         $post = $request->all();
         $post['category'] = join(',', $request->category);
-        $post['image'] = $request->file('image')->storeAS('contacts_img', $request->image->getClientOriginalName());
         Post::create($post);
 
 //        $input = $request->input('size');
@@ -74,6 +73,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -85,6 +85,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -94,9 +95,17 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(NombreRequest $request, Post $post)
     {
         //
+        $inputs =$request->all();
+        $inputs['category'] = join(',', $request->category);
+
+        $post->update($inputs);
+        //$post->update( $request->all());
+
+        return redirect()->route('posts.index')
+            ->with('success', 'Product updated successfully');
     }
 
     /**
@@ -108,5 +117,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+        $post->delete();
+        return redirect()->route('posts.index');
     }
 }
