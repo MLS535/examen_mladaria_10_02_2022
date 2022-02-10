@@ -48,7 +48,7 @@
 
                         {{--type:select name size--}}
                         <div class="form-group">
-                            <label>@lang("Participant")</label>
+                            <label>@lang("Access")</label>
                             <select class="form-control" name="size">
                                 <option selected>Pick Size</option>
                                 <option value="privado" @if(old('size') === 'privado') selected @endif >privado</option>
@@ -62,7 +62,7 @@
 
                         {{--                        type:textarea--}}
                         <div class="form-group">
-                            <label><strong>Description :</strong></label>
+                            <label><strong>{{__("Description")}} :</strong></label>
                             <textarea class="form-control" rows="4" cols="40" name="description" required>{{old('description')}}</textarea>
                             {!! $errors->first('description','<small>:message</small><br>') !!}
                         </div>

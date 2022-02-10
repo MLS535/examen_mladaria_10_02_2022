@@ -17,8 +17,8 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::where('user_id', Auth::id())->get();
-        return view('posts.index', compact('posts'),['newPost'=> new Post]);
+//        $posts = Post::where('user_id', Auth::id())->get();
+        return view('posts.index',['newPost'=> new Post]);
 
     }
 

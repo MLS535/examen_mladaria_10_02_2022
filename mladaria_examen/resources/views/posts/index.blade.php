@@ -52,8 +52,9 @@
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                     <a class="btn btn-info" href="{{ route('posts.show',$post->id) }}">Show</a>
-
+                                    @can('create',$newPost)
                                     <a class="btn btn-primary" href="{{ route('posts.edit',$post->id) }}">Edit</a>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

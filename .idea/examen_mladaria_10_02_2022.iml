@@ -119,6 +119,11 @@
       <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/facade/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/facade/ignition-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/laravel/breeze" />
+      <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/laravel-lang/publisher" />
+      <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/laravel-lang/lang" />
+      <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/dragon-code/support" />
+      <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/dragon-code/pretty-array" />
+      <excludeFolder url="file://$MODULE_DIR$/mladaria_examen/vendor/dragon-code/contracts" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -113,6 +113,11 @@
       <path value="$PROJECT_DIR$/mladaria_examen/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/mladaria_examen/vendor/facade/ignition-contracts" />
       <path value="$PROJECT_DIR$/mladaria_examen/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/mladaria_examen/vendor/laravel-lang/publisher" />
+      <path value="$PROJECT_DIR$/mladaria_examen/vendor/laravel-lang/lang" />
+      <path value="$PROJECT_DIR$/mladaria_examen/vendor/dragon-code/support" />
+      <path value="$PROJECT_DIR$/mladaria_examen/vendor/dragon-code/pretty-array" />
+      <path value="$PROJECT_DIR$/mladaria_examen/vendor/dragon-code/contracts" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

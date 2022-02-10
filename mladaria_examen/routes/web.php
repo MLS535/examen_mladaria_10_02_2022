@@ -28,6 +28,6 @@ Route::get('language-change', [LanguageController::class, 'changeLanguage'])->na
 
 
 
-//Route::fallback(function () {
-//    return redirect('post.create');
-//});
+Route::fallback(function () {
+    return redirect('post.create');
+});
