@@ -75,6 +75,7 @@
                             <label><input type="checkbox" name="category[]" value="Comentable"
                                           @if(is_array(old('category')) && in_array("Comentable", old('category'))) checked @endif> {{ ("Comentable") }}
                             </label>
+                            d
                         </label>
 
 
