@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NombreRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -15,6 +17,9 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::where('user_id', Auth::id())->get();
+        return view('posts.index', compact('posts'),['newPost'=> new Post]);
+
     }
 
     /**
@@ -25,6 +30,17 @@ class PostController extends Controller
     public function create()
     {
         //
+        //
+//       if (Gate::allows('create-post')){
+//           return view('posts.create');
+//       } ;
+//         abort(403);
+        //$this->authorize('create-post');
+
+        $this->authorize('create', new Post);
+
+        return view('posts.create');
+
     }
 
     /**
@@ -33,9 +49,20 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NombreRequest $request)
     {
         //
+
+        $post = $request->all();
+        $post['category'] = join(',', $request->category);
+        $post['image'] = $request->file('image')->storeAS('contacts_img', $request->image->getClientOriginalName());
+        Post::create($post);
+
+//        $input = $request->input('size');
+
+
+        return redirect()->route('posts.index');
+
     }
 
     /**
